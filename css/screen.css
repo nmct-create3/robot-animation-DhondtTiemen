@@ -48,6 +48,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--global-color-back);
+
+  flex-direction: column;
 }
 
 /*
