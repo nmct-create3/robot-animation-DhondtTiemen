@@ -43,6 +43,11 @@ html {
 }
 
 body {
+  min-height: 100vh; /*Minimum 100vh groot, als je dat niet doet wordt hij niet groter dan de body*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--global-color-back);
 }
 
 /*
@@ -133,11 +138,55 @@ body {
 */
 
 .c-robot {
+  max-width: 400px;
+  fill: var(--global-html-color);
+
+  --c-robot-animation-duration: .75s;
+  --c-robot-animation-timing-function: ease-in-out;
+  --c-robot-animation-iteration-count: infinite;
+  --c-robot-animation-direction: alternate;
 }
 
 .c-robot__shadow {
+  fill: var(--c-robot__shadow-fill, black);
+  opacity: .1;
 }
 
+#Robot {
+  animation-name: robotHover;
+  animation-duration: var(--c-robot-animation-duration);
+  animation-timing-function: var(--c-robot-animation-timing-function);
+  animation-iteration-count: var(--c-robot-animation-iteration-count);
+  animation-direction: var(--c-robot-animation-direction);
+  fill: var(--global-color-front);
+}
+
+#Shadow {
+  animation-name: shadowPulse;
+  animation-duration: var(--c-robot-animation-duration);
+  animation-timing-function: var(--c-robot-animation-timing-function);
+  animation-iteration-count: var(--c-robot-animation-iteration-count);
+  animation-direction: var(--c-robot-animation-direction);
+
+  /*Oplossen schaduw*/
+  transform-origin: 50% 100%;
+}
+
+@keyframes shadowPulse {
+  100% {
+    transform: scale(0.75)
+  }
+}
+
+@keyframes robotHover {
+  0% {
+    transform: translateY(2.5%);
+  }
+
+  100% {
+    transform: translateY(-2.5%);
+  }
+}
 
 /*
     Component: Controls
