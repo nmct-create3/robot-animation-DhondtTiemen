@@ -152,7 +152,7 @@ body {
   opacity: .1;
 }
 
-#Robot {
+.c-robot--css-animation #Robot {
   animation-name: robotHover;
   animation-duration: var(--c-robot-animation-duration);
   animation-timing-function: var(--c-robot-animation-timing-function);
@@ -161,7 +161,7 @@ body {
   fill: var(--global-color-front);
 }
 
-#Shadow {
+.c-robot--css-animation #Shadow {
   animation-name: shadowPulse;
   animation-duration: var(--c-robot-animation-duration);
   animation-timing-function: var(--c-robot-animation-timing-function);
